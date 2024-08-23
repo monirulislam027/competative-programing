@@ -128,6 +128,13 @@ void print_linkedList(Node *head)
     cout << endl
          << endl;
 }
+void print_linkedListRecursion(Node *node)
+{
+    if (node == NULL)
+        return;
+    print_linkedListRecursion(node->next);
+    cout << node->val << " ";
+}
 
 int main()
 {
@@ -139,8 +146,8 @@ int main()
     {
         insert_at_tail(head, arr[i]);
     }
-
-    while (true)
+    print_linkedListRecursion(head);
+    while (false)
     {
         cout << "0: Terminate" << endl;
         cout << "1: Insert at head" << endl;
